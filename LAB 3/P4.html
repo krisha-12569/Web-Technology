@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data=[];
+        size=parseInt(prompt("Enter size of an array:"));
+        for(i=0;i<size;i++){
+           let element=parseInt(prompt("Enter element:" +(i+1)+ "i"));
+           data.push(element);
+        }
+        function quickSort(data){
+            let pivot=data(Math.floor(data.length/2));
+            let left=[];
+            let right=[];
+            let middle=[];
+             
+            for(let i=0;i<data.length;i++){
+                if(data[i]<pivot){
+                    left.push(data[i]);
+                }
+                else if(data[i]>pivot){
+                    right.push(data[i]);
+                }
+                else{
+                    middle.push(data[i]);
+                }
+            }
+
+            return[...quickSort(left),...middle,...quickSort(right)];
+        }
+        document.write("Sorted array:"+quickSort(data));
+
+    </script>
+</body>
+</html>
