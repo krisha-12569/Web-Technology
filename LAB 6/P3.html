@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color: aqua;
+        }
+        .div2{
+            background-color: cadetblue;
+        }
+        .div3{
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1>Key Down Event</h1>
+        <input type="text">
+        <button onkeydown="keydownn(event)">Down</button>
+    </div>
+
+    <div class="div2">
+        <h1>Key Up event</h1>
+        <input type="text">
+        <button onkeyup="keyuppp(event)"> UP</button>
+    </div>
+
+    <div class="div3">
+        <h1>Key press event</h1>
+         <input type="text">
+        <button onkeypress="Keypressedd(event)">Click</button>
+    </div>
+
+    <script>
+        function keydownn(e){
+            alert("Key Down event successful")
+            console.log(e);
+        }
+        function keyuppp(e){
+            alert("Key Up event successful")
+            console.log(e)
+        }
+        function Keypressedd(e){
+            alert("Key pressed event successful")
+            console.log(e.key)
+        }
+    </script>
+</body>
+</html>

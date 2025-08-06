@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Event Tracker</title>
+</head>
+<body>
+
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter name"><br><br>
+        <input type="email" id="email" placeholder="Enter email"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+        var form = document.getElementById("myForm");
+        var nameInput = document.getElementById("name");
+        var emailInput = document.getElementById("email");
+        var output = document.getElementById("output");
+
+        nameInput.addEventListener("focus", function() {
+            output.innerText = "Focus event fired on Name input";
+        });
+
+        nameInput.addEventListener("blur", function() {
+            output.innerText = "Blur event fired on Name input";
+        });
+
+        emailInput.addEventListener("change", function() {
+            output.innerText = "Change event fired on Email input";
+        });
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            output.innerText = "Submit event fired on Form";
+        });
+    </script>
+
+</body>
+</html>

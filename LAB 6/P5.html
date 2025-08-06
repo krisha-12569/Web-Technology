@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: blue;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="fun">Hello World</h1>
+    <button onclick="change()">Click here to change style of above</button>
+    <script>
+        function change(){
+            ref=document.getElementById("fun")
+            //1
+            ref.style.backgroundColor="red"
+            //2
+            ref.innerHTML="Demo for changing properties using JAVAScript"
+            //3
+            ref.style.color="orange"
+            //4
+            ref.style.fontsize="100px"
+            //5
+
+        }
+    </script>
+</body>
+</html>

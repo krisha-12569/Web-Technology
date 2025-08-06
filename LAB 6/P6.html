@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2>
+    <form id="regForm" onsubmit="return validateForm()">
+        <label>Name: </label>
+        <input type="text" id="name"><br><br>
+
+        <label>Email: </label>
+        <input type="text" id="email"><br><br>
+
+        <label>Password: </label>
+        <input type="password" id="password"><br><br>
+
+        <label>Confirm Password: </label>
+        <input type="password" id="confirm"><br><br>
+
+        <label>Age: </label>
+        <input type="text" id="age"><br><br>
+
+        <label>Gender: </label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female<br><br>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <p id="errorMsg" style="color:red;"></p>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirm = document.getElementById("confirm").value;
+            var age = document.getElementById("age").value;
+            var genderSelected = document.querySelector('input[name="gender"]:checked');
+
+            var error = "";
+
+            // Name check
+            if (name.trim() === "") {
+                error = "Name is required";
+            }
+            // Email check
+            else if (!/^[\w.-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+                error = "Invalid email format";
+            }
+            // Password length
+            else if (password.length < 6) {
+                error = "Password must be at least 6 characters";
+            }
+            // Confirm password
+            else if (password !== confirm) {
+                error = "Passwords do not match";
+            }
+            // Age check
+            else if (isNaN(age) || age < 18) {
+                error = "Age must be a number and at least 18";
+            }
+            // Gender check
+            else if (!genderSelected) {
+                error = "Please select your gender";
+            }
+
+            if (error !== "") {
+                document.getElementById("errorMsg").innerText = error;
+                return false;
+            } else {
+                alert("Registration Successful!");
+                return true;
+            }
+        }
+    </script>
+
+</body>
+</html>

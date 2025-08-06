@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color: aqua;
+        }
+        .div2{
+            background-color:cadetblue;
+        }
+        .div3{
+            background-color: darkgoldenrod;
+        }
+        .div4{
+            background-color: bisque;
+        }
+        .div5{
+            background-color: antiquewhite;
+        }
+        .div6{
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+     <h1>Double click button</h1>
+    <button ondblclick="Doubleclick()">Double Click here</button>
+    </div>
+
+    <div class="div2">
+    <h1>Mouse down button</h1>
+    <button onmousedown="mouseDownn()">Down </button>
+    </div>
+
+    <div class="div3">
+    <h1>Mouse Enter button</h1>
+    <button onmouseenter="mouseEnterr()">Enter</button>
+    </div>
+
+    <div class="div4">
+        <h1>Mouse UP event</h1>
+        <button onclick="mouseuppp()">UP</button>
+    </div>
+
+    <div class="div5">
+        <h1>Mouse Leave</h1>
+        <button onmouseleave="mouseexit()">Leave</button>
+    </div>
+
+    <div class="div6">
+        <h1>Mouse MOVE</h1>
+        <button onmousemove="mousemoved()">MOVE</button>
+    </div>
+    <script>
+        function Doubleclick(){
+            alert("Double clicked event fired");
+        }
+        function mouseDownn(){
+            alert("Mouse Down event fired");
+        }
+        function mouseEnterr(){
+           alert("Mouse Entered successfully")
+        }
+        function mouseuppp(){
+            alert("Mouse UP successfully")
+        }
+        function mouseexit(){
+            alert("Mouse exit successfully")
+        }
+        function mousemoved(){
+             alert("Mouse moved successfully")
+        }
+    </script>
+</body>
+</html>
