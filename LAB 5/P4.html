@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="loginform" onsubmit="f(event)">
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username" >
+        </p>
+        <p>
+             <label for="password">Password:</label>
+             <input type="password" id="password" placeholder="Enter password">
+        </p>
+        <p>
+              <label for="repeatpword">Confirm password: </label>
+             <input type="password" id="repeatpword" placeholder="Confirm password">
+        </p>
+         <p>
+              <label for="age">Age:</label>
+              <input type="date" id="age" placeholder="Enter age">
+         </p>
+         <p>
+             <label for="enrollmentno">Enrollment No:</label>
+             <input type="number" id="enrollmentno">
+         </p>
+         <p>
+             <label for="email">Email:</label>
+             <input type="text" id="email">
+         </p>
+        <button>Submit</button>
+    </form>
+
+    <script> 
+         function f(event){
+            event.preventDefault();
+            
+            username=document.getElementById("username").value;
+            pattern="^[a-zA-Z1-9]{8,}";
+            RegExp=new RegExp(pattern);
+
+            if(RegExp.test(username)){
+                alert("Valid");
+            }
+            else{
+                alert("Invalid");
+            }
+
+
+           password=document.getElementById("password").value;
+           ppttn="^[0-9]{1}[#@$%^&*!]{8,12}$";
+           RegExp=new RegExp(ppttn);
+
+           if(RegExp.test(password)){
+            alert("valid");
+           }
+           else{
+            alert("Invalid");
+           }
+             
+           
+           q=new Date(age);
+           y=q.getFullYear();
+           age=2025-y;
+           if(age<18){
+              alert("inValid");
+            }
+            else{
+                alert("valid");
+            }
+
+           
+           EnrollmentNo=document.getElementById("enrollmentno").value;
+           epttn="[0-9]{11}";
+           RegExp=new RegExp(epttn);
+
+           if(RegExp.test(EnrollmentNo)){
+            alert("Valid");
+           }
+           else{
+            alert("invalid");
+           }
+
+
+           Email=document.getElementById("email").value;
+           emailp="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+           RegExp=new RegExp(emailp);
+
+           if(RegExp.test(Email)){
+            alert("Valid");
+           }
+           else{
+            alert("Invalid");
+           }
+
+         }
+        
+    </script>
+</body>
+</html>
